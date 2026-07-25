@@ -13,6 +13,11 @@ region = Rect2(200, 0, 200, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3w1vb"]
 animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_exd8k")
@@ -26,8 +31,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w1vb"]
-radius = 69.0
-height = 188.0
+radius = 74.0
+height = 306.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1434158289]
 script = ExtResource("1_508ok")
@@ -36,14 +41,14 @@ script = ExtResource("1_508ok")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3w1vb")
 animation = &"walk"
-frame_progress = 0.25959477
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1643572281]
+position = Vector2(14, 0)
 shape = SubResource("CapsuleShape2D_3w1vb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=392854470]
 offset = Vector2(300, -110)
 limit_left = -135
-limit_top = -402
+limit_top = -401
 limit_right = 9999895
-limit_bottom = 9999998
+limit_bottom = 9999999
