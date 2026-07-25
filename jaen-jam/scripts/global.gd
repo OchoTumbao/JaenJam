@@ -44,9 +44,16 @@ func set_scores(entity: Node2D, angel_score: int, devil_score: int, ignore_score
 	
 
 func spawn_bee(parent: Node, jumpable: bool, horizontalPosition: int):
-	print("spawn_bee llamado")
 	var entity = preload("res://entity.tscn").instantiate()
-	print(entity)
+	entity.set_animation("bee")
 	place_entity(jumpable,horizontalPosition,entity)
 	set_scores(entity,-5,-10,10,-5)
 	parent.add_child(entity)
+	
+func spawn_cat(parent: Node, jumpable: bool, horizontalPosition: int):
+	var entity = preload("res://entity.tscn").instantiate()
+	entity.set_animation("cat")
+	place_entity(jumpable,horizontalPosition,entity)
+	set_scores(entity,-5,-10,10,-5)
+	parent.add_child(entity)
+	
