@@ -42,4 +42,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var entity = area.get_parent()
 	if entity.has_method("playerHit_hit"):
 		entity.playerHit_hit()
-	
+	print("colision_entidad")

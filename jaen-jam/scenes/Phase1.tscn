@@ -15,7 +15,9 @@ size = Vector2(6010, 327)
 a = Vector2(1, 756)
 b = Vector2(1, 214)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_5mgoa"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5mgoa"]
+a = Vector2(-196, 455)
+b = Vector2(-193, -404)
 
 [node name="Phase1" type="Node2D" unique_id=1645063333]
 script = ExtResource("1_4fcp5")
@@ -44,8 +46,8 @@ offset_bottom = 864.0
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1838899710]
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1359011155]
-position = Vector2(3000, 493)
-scale = Vector2(1, 1.1450619)
+position = Vector2(3000, 467.00003)
+scale = Vector2(1, 1.2253087)
 texture = ExtResource("4_5ssih")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=830626188]
@@ -69,21 +71,47 @@ scale = Vector2(1, 1.1280863)
 texture = ExtResource("5_khfs5")
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_0dg7t")]
+unique_name_in_owner = true
 position = Vector2(194, 657)
+collision_layer = 3
+collision_mask = 3
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=420038326]
+[node name="Floor" type="StaticBody2D" parent="." unique_id=420038326]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=408449282]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=408449282]
 visible = false
 position = Vector2(3002, 919)
 shape = SubResource("RectangleShape2D_4fcp5")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=402520625]
+[node name="LeftLimit" type="StaticBody2D" parent="." unique_id=402520625]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=688649493]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLimit" unique_id=688649493]
 shape = SubResource("SegmentShape2D_4fcp5")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1349344672]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("CanvasTexture_5mgoa")
+[node name="Cat wall" type="Area2D" parent="." unique_id=171007020]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat wall" unique_id=1245652823]
+position = Vector2(2197, 406)
+shape = SubResource("SegmentShape2D_5mgoa")
+
+[node name="Taxi wall" type="Area2D" parent="." unique_id=1740383494]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Taxi wall" unique_id=1897422467]
+position = Vector2(3448, 404)
+shape = SubResource("SegmentShape2D_5mgoa")
+
+[node name="Cart wall" type="Area2D" parent="." unique_id=76873809]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cart wall" unique_id=1150101212]
+position = Vector2(4747, 420)
+shape = SubResource("SegmentShape2D_5mgoa")
+
+[connection signal="body_entered" from="Cat wall" to="." method="_on_cat_wall_body_entered"]
+[connection signal="body_entered" from="Taxi wall" to="." method="_on_taxi_wall_body_entered"]
+[connection signal="body_entered" from="Cart wall" to="." method="_on_cart_wall_body_entered"]
