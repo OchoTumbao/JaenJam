@@ -1,0 +1,13 @@
+[
+	{
+		"top":"Prueba Dialogo Json",
+		"time": 2.0
+	},
+	{
+		"bottom":"funciona si el texto esta abajo"
+	},
+	{
+		"top":"funciona si el texto esta arriba",
+		"bottom":"y abajo"
+	}
+]

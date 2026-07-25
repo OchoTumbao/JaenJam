@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_p5iyt"]
 [ext_resource type="Script" uid="uid://b1iwne3b6uumg" path="res://scripts/opening.gd" id="1_rp10g"]
+[ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="2_3lqcv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ojqj"]
 radius = 69.0
