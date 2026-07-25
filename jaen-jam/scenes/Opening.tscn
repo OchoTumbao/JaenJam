@@ -6,27 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mgoa"]
 size = Vector2(1926, 327)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rp10g"]
+a = Vector2(1, 756)
+b = Vector2(1, 214)
+
 [node name="Opening" type="Node2D" unique_id=1333896469]
 script = ExtResource("1_rp10g")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1409959363]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=430370491]
-offset_top = 864.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=778796728]
-offset_right = 1920.0
-offset_bottom = 216.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="CanvasLayer" unique_id=1584213262]
-offset_top = 216.0
-offset_right = 1920.0
-offset_bottom = 864.0
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_p5iyt")]
 position = Vector2(194, 657)
@@ -36,3 +21,27 @@ position = Vector2(194, 657)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=889524402]
 position = Vector2(960, 919)
 shape = SubResource("RectangleShape2D_5mgoa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1573592396]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=628281424]
+offset_top = 864.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=818853281]
+offset_right = 1920.0
+offset_bottom = 216.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer" unique_id=1183072545]
+visible = false
+offset_top = 216.0
+offset_right = 1920.0
+offset_bottom = 864.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1966151038]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=846204642]
+shape = SubResource("SegmentShape2D_rp10g")
