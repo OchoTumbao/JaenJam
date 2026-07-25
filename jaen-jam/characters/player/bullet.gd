@@ -1,18 +1,14 @@
 extends Area2D
 
-var travelled_dist = 0
 var angel
+var bullet_direction
+var texture
 
-func _physics_process(delta: float) -> void:
-	const SPEED = 1000
-	const RANGE = 1200
-	
-	var direction = Vector2.RIGHT
-	position += direction * SPEED * delta
-	
-	travelled_dist += SPEED * delta
-	if travelled_dist > RANGE:
-		queue_free()
+const SPEED = 500
+
+func _process(delta: float) -> void:
+	position -= bullet_direction * SPEED * delta
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if angel:
@@ -22,3 +18,10 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.has_method("demon_collision"):
 			body.demon_collision() 
 	queue_free()
+
+func set_texture():
+	if angel:
+		%devil_bullet.visible = false
+	else:
+		%angel_bullet.visible = false
+		
