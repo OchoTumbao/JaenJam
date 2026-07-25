@@ -1,10 +1,10 @@
 extends Node
 
 var gameController : GameController
-var entitySpeed = 20
+var entitySpeed = 10
 var score = 0
-const RAIL1 = 40
-const RAIL2 = 80
+const RAIL1 = 540
+const RAIL2 = 580
 
 enum Dialogue_mode {
 	MANUAL,
