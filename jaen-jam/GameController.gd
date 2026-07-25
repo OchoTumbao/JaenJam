@@ -7,7 +7,7 @@ var currentScene
 
 func _ready() -> void:
 	Global.gameController = self
-	currentScene = %Opening  
+	currentScene = %Opening
 
 func changeScene(newScene: String, delete: bool = true, keep_running: bool = false) -> void:
 	if currentScene != null :
