@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cv7m6dx2yk1f0"]
+
+[ext_resource type="Script" uid="uid://hitegp3cqg0x" path="res://scripts/entity.gd" id="1_6e8rh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l2lw7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ojqj"]
+radius = 31.016125
+
+[node name="Entity" type="Node2D" unique_id=1129109314]
+script = ExtResource("1_6e8rh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=145986354]
+
+[node name="Drawing" type="Sprite2D" parent="Area2D" unique_id=511644869]
+unique_name_in_owner = true
+texture = SubResource("CanvasTexture_l2lw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1443631872]
+shape = SubResource("CircleShape2D_7ojqj")
