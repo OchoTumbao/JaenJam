@@ -40,6 +40,9 @@ func set_texture(texture: String) -> void:
 	var drawing = load(texture)
 	%Drawing.texture = drawing
 	
+func set_animation(name):
+	%Drawing.play()
+	
 func set_angel_score(value: int) -> void:
 	angelScore = value
 

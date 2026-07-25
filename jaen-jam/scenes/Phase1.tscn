@@ -2,21 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_0dg7t"]
 [ext_resource type="Script" uid="uid://c35bk5x8o8ggt" path="res://scripts/phase_1.gd" id="1_4fcp5"]
-[ext_resource type="Shader" uid="uid://ckilwkelh5ifv" path="res://shaders/sky1.gdshader" id="2_5ssih"]
 [ext_resource type="Texture2D" uid="uid://cd3ygtdopi8pn" path="res://images/backgrounds/sky.PNG" id="4_5ssih"]
 [ext_resource type="Texture2D" uid="uid://dl6gq0cr16gb6" path="res://images/backgrounds/buildings.png" id="4_khfs5"]
 [ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="5_424rd"]
 [ext_resource type="Texture2D" uid="uid://di3fv2mbmi5uy" path="res://images/backgrounds/market.png" id="5_khfs5"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_424rd"]
-shader = ExtResource("2_5ssih")
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fcp5"]
-radius = 69.0
-height = 190.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fcp5"]
-size = Vector2(1926, 327)
+size = Vector2(6010, 327)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4fcp5"]
 a = Vector2(1, 756)
@@ -27,57 +19,16 @@ b = Vector2(1, 214)
 [node name="Phase1" type="Node2D" unique_id=1645063333]
 script = ExtResource("1_4fcp5")
 
-[node name="Sky" type="TextureRect" parent="." unique_id=538990176]
-z_as_relative = false
-material = SubResource("ShaderMaterial_424rd")
-offset_top = 216.0
-offset_right = 6003.0
-offset_bottom = 864.0
-texture = ExtResource("4_5ssih")
-
-[node name="Buildings" type="TextureRect" parent="." unique_id=1680948831]
-z_as_relative = false
-material = SubResource("ShaderMaterial_424rd")
-offset_top = 216.0
-offset_right = 6003.0
-offset_bottom = 864.0
-texture = ExtResource("4_khfs5")
-
-[node name="Floor" type="TextureRect" parent="." unique_id=404957525]
-z_as_relative = false
-material = SubResource("ShaderMaterial_424rd")
-offset_top = 216.0
-offset_right = 6003.0
-offset_bottom = 864.0
-texture = ExtResource("5_424rd")
-
-[node name="Market" type="TextureRect" parent="." unique_id=1903216282]
-z_as_relative = false
-material = SubResource("ShaderMaterial_424rd")
-offset_top = 216.0
-offset_right = 6003.0
-offset_bottom = 864.0
-texture = ExtResource("5_khfs5")
-
-[node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_0dg7t")]
-position = Vector2(194, 657)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=420038326]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=408449282]
-position = Vector2(960, 919)
-shape = SubResource("RectangleShape2D_4fcp5")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1362983220]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1266970347]
 offset_top = 864.0
-offset_right = 1920.0
+offset_right = 6000.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=439566642]
-offset_right = 1920.0
+offset_right = 6002.0
 offset_bottom = 216.0
 color = Color(0, 0, 0, 1)
 
@@ -86,6 +37,43 @@ visible = false
 offset_top = 216.0
 offset_right = 1920.0
 offset_bottom = 864.0
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1838899710]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1359011155]
+position = Vector2(3000, 493)
+scale = Vector2(1, 1.1450619)
+texture = ExtResource("4_5ssih")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=830626188]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=406767888]
+position = Vector2(3000, 540)
+texture = ExtResource("4_khfs5")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1938430974]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=2009754881]
+position = Vector2(3000, 494.99997)
+scale = Vector2(1, 1.2527778)
+texture = ExtResource("5_424rd")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=675339015]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1767585011]
+position = Vector2(3000, 498.5)
+scale = Vector2(1, 1.1280863)
+texture = ExtResource("5_khfs5")
+
+[node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_0dg7t")]
+position = Vector2(194, 657)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=420038326]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=408449282]
+visible = false
+position = Vector2(3002, 919)
+shape = SubResource("RectangleShape2D_4fcp5")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=402520625]
 
@@ -96,4 +84,3 @@ shape = SubResource("SegmentShape2D_4fcp5")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("CanvasTexture_5mgoa")
-[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
