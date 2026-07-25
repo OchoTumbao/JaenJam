@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dl6gq0cr16gb6" path="res://images/backgrounds/buildings.png" id="4_khfs5"]
 [ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="5_424rd"]
 [ext_resource type="Texture2D" uid="uid://di3fv2mbmi5uy" path="res://images/backgrounds/market.png" id="5_khfs5"]
+[ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="7_424rd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fcp5"]
 size = Vector2(6010, 327)
@@ -23,12 +24,12 @@ script = ExtResource("1_4fcp5")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1266970347]
 offset_top = 864.0
-offset_right = 6000.0
+offset_right = 2092.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=439566642]
-offset_right = 6002.0
+offset_right = 2118.0
 offset_bottom = 216.0
 color = Color(0, 0, 0, 1)
 
@@ -37,6 +38,8 @@ visible = false
 offset_top = 216.0
 offset_right = 1920.0
 offset_bottom = 864.0
+
+[node name="DialogueManager" parent="CanvasLayer" unique_id=409699684 instance=ExtResource("7_424rd")]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1838899710]
 
