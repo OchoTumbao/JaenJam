@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cfn1fvmvle8cs" path="res://dialogue_manager.gd" id="1_516v5"]
 [ext_resource type="Texture2D" uid="uid://1fk4t1ugcghm" path="res://icon.svg" id="2_smvbx"]
+[ext_resource type="Texture2D" uid="uid://cu33123hy7qw" path="res://images/Dialogues/Bocadillo-1.png" id="3_5hf3l"]
+[ext_resource type="FontFile" uid="uid://6yxqmta4rfo" path="res://images/Dialogues/PixelifySans-VariableFont_wght.ttf" id="4_507jh"]
+[ext_resource type="Texture2D" uid="uid://5lnkj3cj7yfj" path="res://images/Dialogues/Bocadillo-2.png" id="5_jf0e1"]
 
 [node name="DialogueManager" type="Control" unique_id=409699684]
 layout_mode = 3
@@ -18,28 +21,51 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 216.0
 
-[node name="Portrait" type="TextureRect" parent="TopCharacter" unique_id=1504590820]
+[node name="TopPortrait" type="TextureRect" parent="TopCharacter" unique_id=1504590820]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 10.0
 offset_right = 226.0
 offset_bottom = 216.0
 texture = ExtResource("2_smvbx")
 
-[node name="Panel" type="Panel" parent="TopCharacter" unique_id=1726138770]
-layout_mode = 0
-offset_left = 292.0
-offset_top = 64.0
-offset_right = 1669.0
-offset_bottom = 165.0
+[node name="NinePatchRect" type="NinePatchRect" parent="TopCharacter" unique_id=191244097]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21100001
+anchor_top = 0.21800001
+anchor_right = 0.753
+anchor_bottom = 0.85200006
+offset_left = -238.12003
+offset_top = -39.088
+offset_right = -19.76001
+offset_bottom = 22.967987
+texture = ExtResource("3_5hf3l")
 
-[node name="MarginContainer" type="MarginContainer" parent="TopCharacter/Panel" unique_id=1097334752]
-layout_mode = 0
-offset_right = 1375.0
-offset_bottom = 104.0
+[node name="MarginContainer" type="MarginContainer" parent="TopCharacter/NinePatchRect" unique_id=1097334752]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.120000005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.19999695
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TopText" type="RichTextLabel" parent="TopCharacter/Panel/MarginContainer" unique_id=1415419392]
+[node name="TopText" type="RichTextLabel" parent="TopCharacter/NinePatchRect/MarginContainer" unique_id=1415419392]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_507jh")
+theme_override_font_sizes/normal_font_size = 36
+
+[node name="TextureRect" type="TextureRect" parent="TopCharacter/NinePatchRect" unique_id=179537085]
+layout_mode = 0
+offset_left = 85.0
+offset_right = 655.0
+offset_bottom = 200.0
+texture = ExtResource("5_jf0e1")
 
 [node name="BottomCharacter" type="Control" parent="." unique_id=1736704273]
 unique_name_in_owner = true
@@ -48,25 +74,49 @@ offset_top = 864.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="Portrait" type="TextureRect" parent="BottomCharacter" unique_id=1014560300]
+[node name="BottomPortrait" type="TextureRect" parent="BottomCharacter" unique_id=1014560300]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1692.0
 offset_right = 1908.0
 offset_bottom = 216.0
 texture = ExtResource("2_smvbx")
 
-[node name="Panel" type="Panel" parent="BottomCharacter" unique_id=687641630]
-layout_mode = 0
-offset_left = 260.0
-offset_top = 64.0
-offset_right = 1637.0
-offset_bottom = 165.0
+[node name="NinePatchRect" type="NinePatchRect" parent="BottomCharacter" unique_id=1272856437]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21100001
+anchor_top = 0.21800001
+anchor_right = 0.753
+anchor_bottom = 0.85200006
+offset_left = -55.120026
+offset_top = -39.088
+offset_right = 163.23999
+offset_bottom = 22.967987
+texture = ExtResource("3_5hf3l")
 
-[node name="MarginContainer" type="MarginContainer" parent="BottomCharacter/Panel" unique_id=2089509254]
-layout_mode = 0
-offset_right = 1375.0
-offset_bottom = 104.0
+[node name="MarginContainer" type="MarginContainer" parent="BottomCharacter/NinePatchRect" unique_id=184049123]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.120000005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.19999695
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BottomText" type="RichTextLabel" parent="BottomCharacter/Panel/MarginContainer" unique_id=1524740911]
+[node name="BottomText" type="RichTextLabel" parent="BottomCharacter/NinePatchRect/MarginContainer" unique_id=1504311090]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_507jh")
+theme_override_font_sizes/normal_font_size = 36
+
+[node name="TextureRect" type="TextureRect" parent="BottomCharacter/NinePatchRect" unique_id=1804787714]
+layout_mode = 0
+offset_left = 754.0
+offset_right = 1324.0
+offset_bottom = 200.0
+texture = ExtResource("5_jf0e1")
+flip_h = true

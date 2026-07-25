@@ -30,6 +30,12 @@ func show_line():
 
 	top_text.text = line.get("top", "")
 	bottom_text.text = line.get("bottom", "")
+	
+	if top_text.text != "":
+		portrait_jump(%TopPortrait)
+	if bottom_text.text != "":
+		portrait_jump(%BottomPortrait)
+	
 	if mode == Global.Dialogue_mode.AUTO:
 		await get_tree().create_timer(line.get("time",2.0)).timeout
 		if (active):
@@ -63,3 +69,65 @@ func end_dialogue():
 	bottom_text.text = ""
 	
 	dialogue.clear()
+
+func portrait_jump(portrait: TextureRect):
+
+	var start_pos = portrait.position
+	var start_scale = portrait.scale
+	var start_rotation = portrait.rotation_degrees
+
+	var tween = create_tween()
+
+	# Subida y énfasis inicial
+	tween.set_parallel(true)
+
+	tween.tween_property(
+		portrait,
+		"position",
+		start_pos + Vector2(0, -35),
+		0.25
+	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+	tween.tween_property(
+		portrait,
+		"scale",
+		Vector2(1.18, 1.18),
+		0.25
+	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+	tween.tween_property(
+		portrait,
+		"rotation_degrees",
+		-4,
+		0.25
+	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+
+	# Mantener la pose un rato
+	tween.set_parallel(false)
+	tween.tween_interval(0.5)
+
+
+	# Volver lentamente
+	tween.set_parallel(true)
+
+	tween.tween_property(
+		portrait,
+		"position",
+		start_pos,
+		0.6
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property(
+		portrait,
+		"scale",
+		start_scale,
+		0.6
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property(
+		portrait,
+		"rotation_degrees",
+		start_rotation,
+		0.6
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
