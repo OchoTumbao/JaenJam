@@ -19,10 +19,12 @@ func set_texture():
 
 
 func _on_area_entered(area: Area2D) -> void:
-	queue_free()
+	var entity = area.get_parent()
 	if angel:
-		if area.has_method("angel_hit"):
-			area.angel_hit()
+		if entity.has_method("angel_hit"):
+			entity.angel_hit()
+			queue_free()
 	else:
-		if area.has_method("devil_hit"):
-			area.devil_hit()
+		if entity.has_method("devil_hit"):
+			entity.devil_hit()
+			queue_free()

@@ -1,7 +1,7 @@
 extends Node
 
 var gameController : GameController
-var entitySpeed = 2
+var entitySpeed = 10
 var score = 0
 const RAIL1 = 540
 const RAIL2 = 580

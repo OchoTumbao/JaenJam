@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_0dg7t"]
 [ext_resource type="Script" uid="uid://c35bk5x8o8ggt" path="res://scripts/phase_1.gd" id="1_4fcp5"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fcp5"]
+radius = 69.0
+height = 190.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fcp5"]
 size = Vector2(1926, 327)
 
@@ -15,6 +19,11 @@ script = ExtResource("1_4fcp5")
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_0dg7t")]
 position = Vector2(194, 657)
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=336496997]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=1506497808]
+shape = SubResource("CapsuleShape2D_4fcp5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=420038326]
 
@@ -45,3 +54,5 @@ offset_bottom = 864.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=688649493]
 shape = SubResource("SegmentShape2D_4fcp5")
+
+[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
