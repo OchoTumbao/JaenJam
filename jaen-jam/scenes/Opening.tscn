@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_p5iyt"]
 [ext_resource type="Script" uid="uid://b1iwne3b6uumg" path="res://scripts/opening.gd" id="1_rp10g"]
+[ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="2_3lqcv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mgoa"]
 size = Vector2(1926, 327)
@@ -27,6 +28,9 @@ color = Color(0, 0, 0, 1)
 offset_top = 216.0
 offset_right = 1920.0
 offset_bottom = 864.0
+
+[node name="DialogueManager" parent="." unique_id=409699684 instance=ExtResource("2_3lqcv")]
+unique_name_in_owner = true
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_p5iyt")]
 position = Vector2(194, 657)

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c3bj8krrtcj20"]
+
+[ext_resource type="Script" uid="uid://cfn1fvmvle8cs" path="res://dialogue_manager.gd" id="1_516v5"]
+[ext_resource type="Texture2D" uid="uid://1fk4t1ugcghm" path="res://icon.svg" id="2_smvbx"]
+
+[node name="DialogueManager" type="Control" unique_id=409699684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_516v5")
+
+[node name="TopCharacter" type="Control" parent="." unique_id=782160420]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 216.0
+
+[node name="Portrait" type="TextureRect" parent="TopCharacter" unique_id=1504590820]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 226.0
+offset_bottom = 216.0
+texture = ExtResource("2_smvbx")
+
+[node name="Panel" type="Panel" parent="TopCharacter" unique_id=1726138770]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 64.0
+offset_right = 1669.0
+offset_bottom = 165.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopCharacter/Panel" unique_id=1097334752]
+layout_mode = 0
+offset_right = 1375.0
+offset_bottom = 104.0
+
+[node name="TopText" type="RichTextLabel" parent="TopCharacter/Panel/MarginContainer" unique_id=1415419392]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BottomCharacter" type="Control" parent="." unique_id=1736704273]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_top = 864.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Portrait" type="TextureRect" parent="BottomCharacter" unique_id=1014560300]
+layout_mode = 0
+offset_left = 1692.0
+offset_right = 1908.0
+offset_bottom = 216.0
+texture = ExtResource("2_smvbx")
+
+[node name="Panel" type="Panel" parent="BottomCharacter" unique_id=687641630]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 64.0
+offset_right = 1637.0
+offset_bottom = 165.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BottomCharacter/Panel" unique_id=2089509254]
+layout_mode = 0
+offset_right = 1375.0
+offset_bottom = 104.0
+
+[node name="BottomText" type="RichTextLabel" parent="BottomCharacter/Panel/MarginContainer" unique_id=1524740911]
+unique_name_in_owner = true
+layout_mode = 2
