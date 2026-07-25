@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_ky2pr"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ky2pr"]
+radius = 69.0
+height = 190.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3v5j"]
 size = Vector2(1926, 327)
 
@@ -13,6 +17,11 @@ b = Vector2(1, 214)
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_ky2pr")]
 position = Vector2(194, 657)
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=729272309]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=981224246]
+shape = SubResource("CapsuleShape2D_ky2pr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1846391031]
 

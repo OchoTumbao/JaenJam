@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	global_position += Vector2.LEFT * Global.entitySpeed
+	if(global_position.x < -2.0):
+		ignore_hit()
 
 func angel_hit() -> void:
 	queue_free()
@@ -22,10 +24,12 @@ func devil_hit() -> void:
 	Global.modifyScore(devilScore)
 
 func ignore_hit() -> void:
+	print("ignoreHit")
 	queue_free()
 	Global.modifyScore(ignoreScore)
 
 func playerHit_hit() -> void:
+	print("playerHit")
 	queue_free()
 	Global.modifyScore(playerHitScore)
 
@@ -48,7 +52,4 @@ func set_ignore_score(value: int) -> void:
 func set_player_hit_score(value: int) -> void:
 	playerHitScore = value
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	angel_hit()
-	devil_hit()
 	

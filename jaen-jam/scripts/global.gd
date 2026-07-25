@@ -1,10 +1,31 @@
 extends Node
 
 var gameController : GameController
-var entitySpeed = 2
+var entitySpeed = 10
 var score = 0
 const RAIL1 = 540
 const RAIL2 = 580
+
+enum Dialogue_mode {
+	MANUAL,
+	AUTO
+}
+
+func loadDialogueJson(path: String) -> Array:
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		push_error("No se pudo abrir: "+ path)
+		return []
+	
+	var data = JSON.parse_string(file.get_as_text())
+	
+	if data == null:
+		push_error("JSON INVALIDO: " + path)
+		return []
+	
+	return data
+	
+	
 
 func modifyScore(value: int):
 	score += value
