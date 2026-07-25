@@ -1,6 +1,6 @@
 class_name GameController extends Node
 
-@export var game: Node2D
+@onready var game: Node2D = $Game
 
 var currentScene
 
