@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3prcxfidqg1"]
 
 [ext_resource type="Texture2D" uid="uid://d3e3w4vpdl5j1" path="res://images/endings/Final_cielo.png" id="1_fa3vp"]
+[ext_resource type="FontFile" uid="uid://cr5op2g3ue7c2" path="res://images/Dialogues/pixel-game.regular.otf" id="2_mv74p"]
 
 [node name="GoodEnding" type="Node2D" unique_id=1258317582]
 
@@ -10,3 +11,12 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_fa3vp")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1587236150]
+offset_left = 719.0
+offset_top = 34.0
+offset_right = 1287.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("2_mv74p")
+theme_override_font_sizes/font_size = 84
+text = "¡ Vas a ir al cielo !"

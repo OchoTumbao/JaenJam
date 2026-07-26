@@ -1,18 +1,18 @@
 [
 	{
-		"top": "Tu primera prueba sera... UNA ABEJITA!!!",
+		"top": "Tu primera prueba será... ¡UNA ABEJITA!",
 		"time" : 3.0
 	},
 	{
-		"top": "Las abejas son criaturas muy nobles, son practicamente inofensivas, acercate y observala",
+		"top": "Las abejas son criaturas muy nobles, son prácticamente inofensivas, acércate y observala",
 		"time" : 3.0
 	},
 	{
-		"bottom": "Paparruchas, te va a picar, te va a matar a ti y luego ira a por tu familia",
+		"bottom": "¡Paparruchas! Seguro es una avispa de incógnito. Te va a picar, va a matarte y luego irá a por tu familia",
 		"time" : 3.0
 	},
 	{
-		"bottom": "Mejor adelantate, se inteligente, MATALA!!!",
+		"bottom": "Mejor adelántate, se inteligente, ¡MATALA! Si bichos hay de sobra en el mundo",
 		"time" : 3.0
 	}
 ]

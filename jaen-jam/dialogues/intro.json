@@ -1,77 +1,65 @@
 [
 	{
-		"top": "Presiona espacio para avanzar el dialogo y enter para saltar la introducción",
-		"bottom": "Presiona espacio para avanzar el dialogo y enter para saltar la introducción"
+		"top": "Presiona ESPACIO para avanzar el diálogo y ENTER para saltar la introducción",
+		"bottom": "Presiona ESPACIO para avanzar el diálogo y ENTER para saltar la introducción"
 	},
 	{
-		"top": "Bienvenido al cielo... aqui podras disfrutar todo el tiempo del mundo! ",
-		"bottom":"Bienvenido seas Humano... AL... INFIERNO!!! Donde tu alma sera torturada por toda la eternidad"
+		"top": "Bienvenido al cielo... ¡Aquí podrás disfrutar todo el tiempo del mundo! ",
+		"bottom":"Bienvenido seas humano... ¡AL INFIERNO! Donde tu alma será torturada por toda la eternidad"
 	},
 	{
-		"bottom":"Un momento... Angélica ¿tu que haces aqui?, este humano es nuestro"
+		"bottom":"Un momento... Angélica ¿Tú qué haces aqui? Este humano es nuestro"
 	},
 	{
-		"top": "Hola! me alegro de verte Sulfura! si tu lo dices igual tienes razon, pero me han dado la orden de venir a por el"
+		"top": "¡Hola, me alegro de verte Sulfura! si tú lo dices igual tienes razón, pero me han dado la orden de venir a por el"
 	},
 	{
-		"bottom":"Como va a ser eso, ¿no has visto su formulario? si tiene una puntuacion de..."
+		"bottom":"¿Cómo va a ser eso? ¿No has visto su formulario? Si tiene una puntuacion de..."
 	},
 	{
-		"top": "0 PUNTOS!!!!!",
-		"bottom": "0 PUNTOS!!!!"
+		"top": "¡0 PUNTOS!",
+		"bottom": "¡0 PUNTOS!"
 	},
 	{
-		"top" : "Es... interesante, nunca antes habia visto a ningun humano con una puntuación neutra perfecta"
+		"top" : "Es... ¡Interesante! Nunca antes había visto a un humano con una puntuación neutra perfecta"
 	},
 	{
-		"bottom": "Diras que nunca habias visto a alguien tan mediocre jamas. ¿Que se supone que se hace en estos casos?"
+		"bottom": "Dirás que nunca habias visto a alguien tan MEDIOCRE jamás. ¿Qué se supone que hagamos en estos casos?"
 	},
 	{
-		"top": "Lo explicaron en la instituto del mas alla... Ese dia igual estabas ocupada"
+		"top": "El protocolo dice que en caso de empate se realiza un examen para decidir si irá al cielo o al infierno"
 	},
 	{
-		"bottom": "Si... ocupada, si, vaya friki..."
+		"bottom": "¡¿UN EXAMEN?! ¡Se supone que soy la torturadora no la torturada!"
 	},
 	{
-		"top": "Se supone que en casos de empate se realiza un examen para decidir si ira al cielo o al infierno"
+		"top": "¡Que ilusión! ¡Mi primer examen celestial! ¡Voy a ver qué dice el manual!"
 	},
 	{
-		"bottom": "UN EXAMEN!!!! Se suponia que aquí quien torturaba era yo!"
+		"top": "A ver... aqui dice: \" Muévete a la izquierda con la tecla A y a la derecha con la D, para saltar pulsa ESPACIO..."
 	},
 	{
-		"top": "Bueno, a mi los examenes me parecen divertidos, pero piensa que quien se examina es el humano, no tu"
+		"top": "A lo largo del juego se te plantearán situaciones a las que reaccionar y tus guías espirituales que te darán su opinión"
 	},
 	{
-		"bottom": "Entonces su tortura ya ha empezado y no me he dado cuenta! Soy la mejor en mi oficio, anda alitas, saca tus libros y explicalo, que esto va a ser divertido"
+		"top": "Para hacer caso a tu compañera angelical dispara balas Angelicales con el CLICK IZQUIERDO del ratón. Para hacerle caso a la demoníaca haz CLICK DERECHO para disparar balas demoníacas"
 	},
 	{
-		"top": "Que ilusion! mi primer examen Celestial! voy a ver que dice el maual!"
+		"top": "También puedes evitar las situaciones esquivándolas, saltando con SPACE o dejar que estas te alcancen sin reaccionar."
 	},
 	{
-		"top": "A ver... aqui dice: \" Muevete con el WASD y salta con el boton espacio..."
+		"top": "Cada decisión que tomes tendrá asociada una puntuación positiva o negativa. Al final del exámen se contabilizará tu puntuación total y se determinará tu destino."
 	},
 	{
-		"top": "a lo largo del juego se te plantearan situaciones a las que tendras que responder y unas compañeras que te daran su opinion"
+		"top": "Confía en tu instinto y toma la decisión que creas mejor \""
 	},
 	{
-		"top": "Para hacer caso a tu compañera angelical dispara balas Angelicales con el boton izquierdo del raton y para hacer caso a tu compañera demoniaca pulsa el boton derecho para disparar balas demoniacas"
+		"bottom": "¿Por qué parece el tutorial de un videojuego metido con calzador?"
 	},
 	{
-		"top": "Tambien puedes esquivar las situaciones evitandolas sin disparar, o dejar que estas te toquen sin disparar."
+		"top": "No sé, de alguna forma tendrán que entretenerse los funcionaros del Más Allá supongo..."
 	},
 	{
-		"top": "Cada decision que tomes tendra asociada una puntuación positiva o negativa, al final del examen se contabilizara tu puntuación total y se determinara si vas al cielo o al infierno."
-	},
-	{
-		"top": "Recuerda, tus compañeras dan información basada unicamente en su criterio, confia en tu instinto y toma la decisión que tu creas mejor \""
-	},
-	{
-		"bottom": "¿Porque parece un tutorial de un videojuego metido con calzador?"
-	},
-	{
-		"top": "No lo se, de alguna forma tendran que entretenerse los funcionaros del más alla supongo..."
-	},
-	{
-		"top": "esto es aburrido hasta para mi... EHEM, Digo, Comencemos el examen entonces!"
+		"top": "Es aburrido hasta para mí- *ehem* ¡Comencemos el examen!"
 	}
 ]
