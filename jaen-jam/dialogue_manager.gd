@@ -51,9 +51,16 @@ func show_line():
 	
 	
 	if top_text.text != "":
+		%TopDialogue.visible = true
 		portrait_jump(%TopPortrait)
+	else:
+		%TopDialogue.visible = false
+		
 	if bottom_text.text != "":
+		%BottomDialogue.visible = true
 		portrait_jump(%BottomPortrait)
+	else:
+		%BottomDialogue.visible = false
 	
 	if mode == Global.Dialogue_mode.AUTO:
 		await get_tree().create_timer(line.get("time",2.0)).timeout
@@ -68,8 +75,10 @@ func _unhandled_input(event):
 	if mode != Global.Dialogue_mode.MANUAL:
 		return
 	
-	if event.is_action_pressed("Dialogue"):
+	if event.is_action_released("Dialogue"):
 		next_line()
+	if event.is_action_released("Skip_Dialogue"):
+		end_dialogue()
 
 
 func next_line():

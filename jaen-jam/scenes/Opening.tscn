@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b1iwne3b6uumg" path="res://scripts/opening.gd" id="1_rp10g"]
 [ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="2_3lqcv"]
-[ext_resource type="Texture2D" uid="uid://1fk4t1ugcghm" path="res://icon.svg" id="2_onevj"]
 [ext_resource type="Texture2D" uid="uid://cd3ygtdopi8pn" path="res://images/backgrounds/sky.PNG" id="3_f4vo8"]
 [ext_resource type="Texture2D" uid="uid://dl6gq0cr16gb6" path="res://images/backgrounds/buildings.png" id="5_q1kfr"]
 [ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="6_kkuo2"]
+[ext_resource type="Texture2D" uid="uid://dg4yj07mwceg8" path="res://images/sprites/PC_0.png" id="6_onevj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mgoa"]
 size = Vector2(1926, 327)
@@ -73,4 +73,4 @@ texture = ExtResource("6_kkuo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936250050]
 position = Vector2(194, 657)
-texture = ExtResource("2_onevj")
+texture = ExtResource("6_onevj")

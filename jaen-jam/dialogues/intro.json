@@ -1,7 +1,7 @@
 [
 	{
-		"top": "Presiona enter para avanzar el dialogo",
-		"bottom": "Presiona enter para avanzar el dialogo"
+		"top": "Presiona espacio para avanzar el dialogo y enter para saltar la introducción",
+		"bottom": "Presiona espacio para avanzar el dialogo y enter para saltar la introducción"
 	},
 	{
 		"top": "Bienvenido al cielo... aqui podras disfrutar todo el tiempo del mundo! ",
@@ -60,7 +60,10 @@
 		"top": "Tambien puedes esquivar las situaciones evitandolas sin disparar, o dejar que estas te toquen sin disparar."
 	},
 	{
-		"top": "Cada decision que tomes tendra asociada una puntuación positiva o negativa, al final del examen se contabilizara tu puntuación total y se determinara si vas al cielo o al infierno \""
+		"top": "Cada decision que tomes tendra asociada una puntuación positiva o negativa, al final del examen se contabilizara tu puntuación total y se determinara si vas al cielo o al infierno."
+	},
+	{
+		"top": "Recuerda, tus compañeras dan información basada unicamente en su criterio, confia en tu instinto y toma la decisión que tu creas mejor \""
 	},
 	{
 		"bottom": "¿Porque parece un tutorial de un videojuego metido con calzador?"

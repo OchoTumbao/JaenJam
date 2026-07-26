@@ -31,7 +31,9 @@ offset_right = 251.0
 offset_bottom = 256.0
 texture = ExtResource("2_507jh")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="TopCharacter" unique_id=191244097]
+[node name="TopDialogue" type="NinePatchRect" parent="TopCharacter" unique_id=191244097]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21100001
@@ -44,7 +46,7 @@ offset_right = -19.76001
 offset_bottom = 22.967987
 texture = ExtResource("3_5hf3l")
 
-[node name="MarginContainer" type="MarginContainer" parent="TopCharacter/NinePatchRect" unique_id=1097334752]
+[node name="MarginContainer" type="MarginContainer" parent="TopCharacter/TopDialogue" unique_id=1097334752]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.120000005
@@ -55,14 +57,14 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopText" type="RichTextLabel" parent="TopCharacter/NinePatchRect/MarginContainer" unique_id=1415419392]
+[node name="TopText" type="RichTextLabel" parent="TopCharacter/TopDialogue/MarginContainer" unique_id=1415419392]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_507jh")
 theme_override_font_sizes/normal_font_size = 36
 
-[node name="TextureRect" type="TextureRect" parent="TopCharacter/NinePatchRect" unique_id=179537085]
+[node name="TextureRect" type="TextureRect" parent="TopCharacter/TopDialogue" unique_id=179537085]
 layout_mode = 0
 offset_left = 85.0
 offset_right = 655.0
@@ -85,7 +87,9 @@ offset_right = 1912.0
 offset_bottom = 180.0
 texture = ExtResource("6_jf0e1")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="BottomCharacter" unique_id=1272856437]
+[node name="BottomDialogue" type="NinePatchRect" parent="BottomCharacter" unique_id=1272856437]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21100001
@@ -98,7 +102,7 @@ offset_right = 163.23999
 offset_bottom = 22.967987
 texture = ExtResource("3_5hf3l")
 
-[node name="MarginContainer" type="MarginContainer" parent="BottomCharacter/NinePatchRect" unique_id=184049123]
+[node name="MarginContainer" type="MarginContainer" parent="BottomCharacter/BottomDialogue" unique_id=184049123]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.120000005
@@ -109,14 +113,14 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BottomText" type="RichTextLabel" parent="BottomCharacter/NinePatchRect/MarginContainer" unique_id=1504311090]
+[node name="BottomText" type="RichTextLabel" parent="BottomCharacter/BottomDialogue/MarginContainer" unique_id=1504311090]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_507jh")
 theme_override_font_sizes/normal_font_size = 36
 
-[node name="TextureRect" type="TextureRect" parent="BottomCharacter/NinePatchRect" unique_id=1804787714]
+[node name="TextureRect" type="TextureRect" parent="BottomCharacter/BottomDialogue" unique_id=1804787714]
 layout_mode = 0
 offset_left = 754.0
 offset_right = 1324.0
