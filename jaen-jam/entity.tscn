@@ -88,6 +88,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ojqj"]
 radius = 39.319206
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkfqb"]
+height = 160.33
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oquum"]
+radius = 14.655
+height = 94.48
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dign3"]
+radius = 56.55
+height = 310.92
+
 [node name="Entity" type="Node2D" unique_id=1129109314]
 script = ExtResource("1_6e8rh")
 
@@ -96,10 +107,34 @@ script = ExtResource("1_6e8rh")
 [node name="Drawing" type="AnimatedSprite2D" parent="Area2D" unique_id=616346344]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3w1vb")
-animation = &"bee"
+animation = &"carrito"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1443631872]
+[node name="Abeja" type="CollisionShape2D" parent="Area2D" unique_id=1443631872]
+unique_name_in_owner = true
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_7ojqj")
+disabled = true
+
+[node name="Carrito" type="CollisionShape2D" parent="Area2D" unique_id=2066856982]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_wkfqb")
+disabled = true
+
+[node name="Gato" type="CollisionShape2D" parent="Area2D" unique_id=111176915]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_oquum")
+disabled = true
+
+[node name="Taxi" type="CollisionShape2D" parent="Area2D" unique_id=248994562]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_dign3")
+disabled = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

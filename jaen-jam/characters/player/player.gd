@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var bullet_scene = preload("res://characters/player/bullet.tscn")
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -600.0
 
 
 func _physics_process(delta: float) -> void:
