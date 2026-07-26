@@ -98,6 +98,9 @@ func end_dialogue():
 	
 	dialogue.clear()
 	
+	%BottomDialogue.visible = false
+	%TopDialogue.visible = false
+	
 	dialogue_finished.emit()
 
 func portrait_jump(portrait: TextureRect):

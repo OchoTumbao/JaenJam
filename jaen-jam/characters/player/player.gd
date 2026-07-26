@@ -21,8 +21,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if velocity.x > 0.0:
-		%PC.play("walk") 
+	if velocity.x != 0.0:
+		%PC.play("walk")
+	else:
+		%PC.stop()
 	
 	if Input.is_action_just_pressed("angel"):
 		shoot(true)
