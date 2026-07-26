@@ -54,6 +54,7 @@ offset_right = 6.0
 offset_bottom = 900.0
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=409699684 instance=ExtResource("7_424rd")]
+unique_name_in_owner = true
 offset_left = 6.0
 offset_top = 2.0
 offset_right = 6.0

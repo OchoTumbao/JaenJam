@@ -51,6 +51,8 @@ func spawn_bee(parent: Node, horizontalPosition: int, verticalPosition: int, spe
 	entity.set_initial_position(Vector2(horizontalPosition,verticalPosition))
 	set_scores(entity,-5,-10,10,-5)
 	parent.add_child(entity)
+	if parent.has_method("register_entity"):
+		parent.register_entity(entity)
 	
 func spawn_cat(parent: Node, horizontalPosition: int, verticalPosition: int, speed: int):
 	var entity = load("res://entity.tscn").instantiate()
@@ -60,6 +62,8 @@ func spawn_cat(parent: Node, horizontalPosition: int, verticalPosition: int, spe
 	entity.set_initial_position(Vector2(horizontalPosition,verticalPosition))
 	set_scores(entity,5,-10,-5,10)
 	parent.add_child(entity)
+	if parent.has_method("register_entity"):
+		parent.register_entity(entity)
 	
 func spawn_cart(parent: Node,horizontalPosition: int, verticalPosition: int, speed: int):
 	var entity = load("res://entity.tscn").instantiate()
@@ -67,8 +71,10 @@ func spawn_cart(parent: Node,horizontalPosition: int, verticalPosition: int, spe
 	entity.set_speed(speed)
 	entity.set_hitbox(Global.Entity_Hitboxes.CART)
 	entity.set_initial_position(Vector2(horizontalPosition,verticalPosition))
-	set_scores(entity,10,-5,-10,5)
+	set_scores(entity,10,-5,-10,-5)
 	parent.add_child(entity)
+	if parent.has_method("register_entity"):
+		parent.register_entity(entity)
 	
 func spawn_taxi(parent: Node, horizontalPosition: int, verticalPosition:int, speed: int):
 	var entity = load("res://entity.tscn").instantiate()
@@ -78,4 +84,6 @@ func spawn_taxi(parent: Node, horizontalPosition: int, verticalPosition:int, spe
 	entity.set_initial_position(Vector2(horizontalPosition,verticalPosition))
 	set_scores(entity,-10,10,-5,-5)
 	parent.add_child(entity)
+	if parent.has_method("register_entity"):
+		parent.register_entity(entity)
 	

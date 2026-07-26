@@ -6,6 +6,8 @@ var ignoreScore = 0
 var playerHitScore = 0
 var speed = 0
 
+signal entity_destroyed
+
 func _ready() -> void:
 	print("Entity creada en:", global_position)
 
@@ -16,20 +18,24 @@ func _physics_process(delta: float) -> void:
 func angel_hit() -> void:
 	queue_free()
 	Global.modifyScore(angelScore)
+	entity_destroyed.emit()
 	
 func devil_hit() -> void:
 	queue_free()
 	Global.modifyScore(devilScore)
+	entity_destroyed.emit()
 
 func ignore_hit() -> void:
 	print("ignoreHit")
 	queue_free()
 	Global.modifyScore(ignoreScore)
+	entity_destroyed.emit()
 
 func playerHit_hit() -> void:
 	print("playerHit")
 	queue_free()
 	Global.modifyScore(playerHitScore)
+	entity_destroyed.emit()
 
 func set_initial_position(position: Vector2) -> void:
 	global_position = position
