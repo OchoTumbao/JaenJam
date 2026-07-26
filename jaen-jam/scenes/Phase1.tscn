@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="5_424rd"]
 [ext_resource type="Texture2D" uid="uid://di3fv2mbmi5uy" path="res://images/backgrounds/market.png" id="5_khfs5"]
 [ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="7_424rd"]
+[ext_resource type="Script" uid="uid://c8bvilobvuoy6" path="res://scripts/camera.gd" id="8_57w61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fcp5"]
 size = Vector2(6010, 327)
@@ -46,28 +47,29 @@ offset_bottom = 864.0
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1838899710]
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1359011155]
-position = Vector2(3000, 467.00003)
-scale = Vector2(1, 1.2253087)
+position = Vector2(3000.25, 538.5)
+scale = Vector2(0.99991673, 1.0046296)
 texture = ExtResource("4_5ssih")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=830626188]
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=406767888]
-position = Vector2(3000, 540)
+position = Vector2(3002.75, 540)
+scale = Vector2(0.9990838, 1)
 texture = ExtResource("4_khfs5")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1938430974]
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=2009754881]
-position = Vector2(3000, 494.99997)
-scale = Vector2(1, 1.2527778)
+position = Vector2(3002.75, 538)
+scale = Vector2(0.9990838, 1.0092592)
 texture = ExtResource("5_424rd")
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=675339015]
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1767585011]
-position = Vector2(3000, 498.5)
-scale = Vector2(1, 1.1280863)
+position = Vector2(3002.75, 538.5)
+scale = Vector2(0.9990838, 1.0046296)
 texture = ExtResource("5_khfs5")
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_0dg7t")]
@@ -111,6 +113,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cart wall" unique_id=1150101212]
 position = Vector2(4747, 420)
 shape = SubResource("SegmentShape2D_5mgoa")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=600322074 node_paths=PackedStringArray("player")]
+limit_left = 0
+limit_right = 6000
+script = ExtResource("8_57w61")
+player = NodePath("../Player")
+
+[node name="RightLimit" type="StaticBody2D" parent="." unique_id=773765436]
+position = Vector2(6000, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLimit" unique_id=1759201315]
+shape = SubResource("SegmentShape2D_4fcp5")
 
 [connection signal="body_entered" from="Cat wall" to="." method="_on_cat_wall_body_entered"]
 [connection signal="body_entered" from="Taxi wall" to="." method="_on_taxi_wall_body_entered"]
