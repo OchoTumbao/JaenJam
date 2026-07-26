@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	Global.scoreController = %Score
 	Global.spawn_bee(self, 2000, 600, 3)
 	
 

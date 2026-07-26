@@ -12,8 +12,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	global_position += Vector2.LEFT * speed
-	if(global_position.x < -2.0):
-		ignore_hit()
 
 func angel_hit() -> void:
 	queue_free()
