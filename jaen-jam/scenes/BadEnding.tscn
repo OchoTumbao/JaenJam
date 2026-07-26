@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://m64aemlw2cxu"]
 
 [ext_resource type="Texture2D" uid="uid://b8y45pjkmh5ke" path="res://images/endings/Final_infierno.png" id="1_7vefu"]
+[ext_resource type="FontFile" uid="uid://cr5op2g3ue7c2" path="res://images/Dialogues/pixel-game.regular.otf" id="2_uibt6"]
 
 [node name="BadEnding" type="Node2D" unique_id=43643759]
 
@@ -10,3 +11,12 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_7vefu")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=246905326]
+offset_left = 641.0
+offset_top = 923.0
+offset_right = 1299.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("2_uibt6")
+theme_override_font_sizes/font_size = 84
+text = "¡ Vas a ir al INFIERNO !"
