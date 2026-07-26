@@ -22,7 +22,7 @@ func _on_cat_wall_body_entered(body: Node2D) -> void:
 
 func _on_taxi_wall_body_entered(body: Node2D) -> void:
 	if !taxi_spawned:
-		Global.spawn_taxi(self, 4500, 550, 0)
+		Global.spawn_taxi_standing(self, 4500, 550, 0)
 		var taxiDialogue = Global.loadDialogueJson("res://dialogues/Fase1Taxi.json")
 		%DialogueManager.start_dialogue(taxiDialogue, Global.Dialogue_mode.AUTO)
 		taxi_spawned = true
@@ -47,3 +47,9 @@ func trigger_phase1_Ending() -> void:
 func on_ending_dialogue_finished() -> void:
 	if ending_ready:
 		Global.gameController.changeScene("res://scenes/Phase2.tscn")
+		
+func register_entity(entity):
+	entity.entity_destroyed.connect(_on_entity_destroyed)
+
+func _on_entity_destroyed():
+	%Blip.play()

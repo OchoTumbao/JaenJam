@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://ti57b7etl62j"]
 
 [ext_resource type="Script" uid="uid://d1ogsq4yu1b1t" path="res://characters/player/player.gd" id="1_508ok"]
+[ext_resource type="Texture2D" uid="uid://csanfwmetmwks" path="res://images/sprites/PC_3.png" id="2_5dc8e"]
 [ext_resource type="Texture2D" uid="uid://c3hk57vbxe8fd" path="res://images/sprites/PC-Sheet.png" id="2_xxgcw"]
 [ext_resource type="AudioStream" uid="uid://fganmpb41px1" path="res://sounds/jump.wav" id="3_exd8k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixbpm"]
+atlas = ExtResource("2_5dc8e")
+region = Rect2(0, 0, 200, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exd8k"]
 atlas = ExtResource("2_xxgcw")
@@ -14,7 +19,10 @@ region = Rect2(200, 0, 200, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3w1vb"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixbpm")
+}],
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
@@ -44,7 +52,7 @@ script = ExtResource("1_508ok")
 [node name="PC" type="AnimatedSprite2D" parent="." unique_id=592783946]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3w1vb")
-animation = &"walk"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1643572281]
 position = Vector2(14, 0)

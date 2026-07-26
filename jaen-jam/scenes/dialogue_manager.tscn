@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://6yxqmta4rfo" path="res://images/Dialogues/PixelifySans-VariableFont_wght.ttf" id="4_507jh"]
 [ext_resource type="Texture2D" uid="uid://5lnkj3cj7yfj" path="res://images/Dialogues/Bocadillo-2.png" id="5_jf0e1"]
 [ext_resource type="Texture2D" uid="uid://c7i8lcxv0dpfu" path="res://images/sprites/Demon.png" id="6_jf0e1"]
+[ext_resource type="AudioStream" uid="uid://bxtsbxj2gqtgt" path="res://sounds/dialog.wav" id="7_jf0e1"]
 
 [node name="DialogueManager" type="Control" unique_id=409699684]
 layout_mode = 3
@@ -127,3 +128,9 @@ offset_right = 1324.0
 offset_bottom = 200.0
 texture = ExtResource("5_jf0e1")
 flip_h = true
+
+[node name="Dialog_sound" type="AudioStreamPlayer" parent="." unique_id=1689423187]
+unique_name_in_owner = true
+stream = ExtResource("7_jf0e1")
+volume_db = -15.509
+pitch_scale = 0.79

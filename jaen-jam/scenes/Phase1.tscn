@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c35bk5x8o8ggt" path="res://scripts/phase_1.gd" id="1_4fcp5"]
 [ext_resource type="PackedScene" uid="uid://dm5b3usgkp53r" path="res://scenes/score.tscn" id="2_57w61"]
 [ext_resource type="Texture2D" uid="uid://faesyplbjm1w" path="res://images/backgrounds/Fondo_final.png" id="4_khfs5"]
+[ext_resource type="AudioStream" uid="uid://bn1d4duyfwu4e" path="res://sounds/blip.wav" id="7_57w61"]
 [ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="7_424rd"]
 [ext_resource type="Script" uid="uid://c8bvilobvuoy6" path="res://scripts/camera.gd" id="8_57w61"]
 
@@ -121,6 +122,10 @@ position = Vector2(6000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightLimit" unique_id=1759201315]
 shape = SubResource("SegmentShape2D_4fcp5")
+
+[node name="Blip" type="AudioStreamPlayer" parent="." unique_id=1619230152]
+unique_name_in_owner = true
+stream = ExtResource("7_57w61")
 
 [connection signal="body_entered" from="Cat wall" to="." method="_on_cat_wall_body_entered"]
 [connection signal="body_entered" from="Taxi wall" to="." method="_on_taxi_wall_body_entered"]

@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0.0:
 		%PC.play("walk")
 	else:
-		%PC.stop()
+		%PC.play("idle")
 	
 	if Input.is_action_just_pressed("angel"):
 		shoot(true)
