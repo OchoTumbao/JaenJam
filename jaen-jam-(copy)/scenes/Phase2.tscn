@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://ci0ypchye36vc"]
+
+[ext_resource type="PackedScene" uid="uid://dm5b3usgkp53r" path="res://scenes/score.tscn" id="1_31fyj"]
+[ext_resource type="Script" uid="uid://4wpvx5yns2cc" path="res://scripts/phase_2.gd" id="1_ja24s"]
+[ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_ky2pr"]
+[ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="2_j0lpx"]
+[ext_resource type="Texture2D" uid="uid://cd3ygtdopi8pn" path="res://images/backgrounds/sky.PNG" id="4_ppsh8"]
+[ext_resource type="Texture2D" uid="uid://dl6gq0cr16gb6" path="res://images/backgrounds/buildings.png" id="5_4u3v1"]
+[ext_resource type="Texture2D" uid="uid://di3fv2mbmi5uy" path="res://images/backgrounds/market.png" id="6_4u3v1"]
+[ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="6_ja24s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3v5j"]
+size = Vector2(1926, 327)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ky2pr"]
+a = Vector2(1, 756)
+b = Vector2(1, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ojqj"]
+size = Vector2(20, 800)
+
+[node name="Phase2" type="Node2D" unique_id=829915753]
+script = ExtResource("1_ja24s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1806834467]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1777381945]
+offset_top = 864.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1853544578]
+offset_right = 1920.0
+offset_bottom = 216.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer" unique_id=489114491]
+visible = false
+offset_top = 216.0
+offset_right = 1920.0
+offset_bottom = 864.0
+
+[node name="Score" parent="CanvasLayer" unique_id=1314207172 instance=ExtResource("1_31fyj")]
+unique_name_in_owner = true
+offset_left = 6.0
+offset_top = 900.0
+offset_right = 6.0
+offset_bottom = 900.0
+
+[node name="DialogueManager" parent="CanvasLayer" unique_id=409699684 instance=ExtResource("2_j0lpx")]
+unique_name_in_owner = true
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 2.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1846391031]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1901351024]
+position = Vector2(960, 919)
+shape = SubResource("RectangleShape2D_u3v5j")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1979966328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2041632731]
+shape = SubResource("SegmentShape2D_ky2pr")
+
+[node name="Sky" type="TextureRect" parent="." unique_id=1813529659]
+z_as_relative = false
+offset_left = -4085.0
+offset_top = 218.0
+offset_right = 1918.0
+offset_bottom = 866.0
+texture = ExtResource("4_ppsh8")
+
+[node name="Buildings" type="TextureRect" parent="." unique_id=272716972]
+z_as_relative = false
+offset_left = -4085.0
+offset_top = 218.0
+offset_right = 1918.0
+offset_bottom = 866.0
+texture = ExtResource("5_4u3v1")
+
+[node name="Floor" type="TextureRect" parent="." unique_id=461952803]
+z_as_relative = false
+offset_left = -4085.0
+offset_top = 218.0
+offset_right = 1918.0
+offset_bottom = 866.0
+texture = ExtResource("6_ja24s")
+
+[node name="Sky2" type="TextureRect" parent="." unique_id=496551606]
+z_as_relative = false
+offset_left = -4085.0
+offset_top = 218.0
+offset_right = 1918.0
+offset_bottom = 866.0
+texture = ExtResource("6_4u3v1")
+
+[node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_ky2pr")]
+position = Vector2(194, 657)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1267791949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1661160419]
+position = Vector2(3, 510)
+shape = SubResource("RectangleShape2D_7ojqj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_ignore_area_2d_area_entered"]

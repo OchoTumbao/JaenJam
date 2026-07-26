@@ -69,3 +69,4 @@ func set_hitbox(value: Global.Entity_Hitboxes):
 			%Gato.disabled = false
 		Global.Entity_Hitboxes.TAXI:
 			%Taxi.disabled = false
+			

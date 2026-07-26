@@ -25,6 +25,7 @@ func register_entity(entity):
 	entity.entity_destroyed.connect(_on_entity_destroyed)
 	
 func _on_entity_destroyed():
+	%Blip.play()
 	entities_alive -= 1
 
 	if entities_alive == 0:

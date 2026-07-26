@@ -86,4 +86,15 @@ func spawn_taxi(parent: Node, horizontalPosition: int, verticalPosition:int, spe
 	parent.add_child(entity)
 	if parent.has_method("register_entity"):
 		parent.register_entity(entity)
+		
+func spawn_taxi_standing(parent: Node, horizontalPosition: int, verticalPosition:int, speed: int):
+	var entity = load("res://entity.tscn").instantiate()
+	entity.set_animation("taxi_idle")
+	entity.set_speed(speed)
+	entity.set_hitbox(Global.Entity_Hitboxes.TAXI)
+	entity.set_initial_position(Vector2(horizontalPosition,verticalPosition))
+	set_scores(entity,-10,10,-5,-5)
+	parent.add_child(entity)
+	if parent.has_method("register_entity"):
+		parent.register_entity(entity)
 	

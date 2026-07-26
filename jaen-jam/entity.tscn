@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://iv4xh61txsew" path="res://images/sprites/Abeja-Sheet.png" id="2_uqc13"]
 [ext_resource type="Texture2D" uid="uid://d318onef6qclc" path="res://images/sprites/Gato-Sheet.png" id="3_nwmpt"]
 [ext_resource type="Texture2D" uid="uid://f1vqvmtopowg" path="res://images/sprites/Carrito-Sheet.png" id="4_6tppj"]
+[ext_resource type="Texture2D" uid="uid://tsboed2ipjd6" path="res://images/sprites/Taxi_0.png" id="6_6tppj"]
 [ext_resource type="Texture2D" uid="uid://b6o3kwc2vn4ru" path="res://images/sprites/Taxi-Sheet.png" id="6_pb85n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_goqtd"]
@@ -37,6 +38,10 @@ region = Rect2(0, 0, 240, 446)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2455w"]
 atlas = ExtResource("6_pb85n")
 region = Rect2(240, 0, 240, 446)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb85n"]
+atlas = ExtResource("6_6tppj")
+region = Rect2(0, 0, 240, 446)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3w1vb"]
 animations = [{
@@ -83,6 +88,14 @@ animations = [{
 "loop": 1,
 "name": &"taxi",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb85n")
+}],
+"loop": 1,
+"name": &"taxi_idle",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ojqj"]
@@ -107,7 +120,7 @@ script = ExtResource("1_6e8rh")
 [node name="Drawing" type="AnimatedSprite2D" parent="Area2D" unique_id=616346344]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3w1vb")
-animation = &"carrito"
+animation = &"taxi_idle"
 
 [node name="Abeja" type="CollisionShape2D" parent="Area2D" unique_id=1443631872]
 unique_name_in_owner = true

@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		%Jump.play()
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
@@ -24,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0.0:
 		%PC.play("walk")
 	else:
-		%PC.stop()
+		%PC.play("idle")
 	
 	if Input.is_action_just_pressed("angel"):
 		shoot(true)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dm5b3usgkp53r"]
+
+[ext_resource type="Script" uid="uid://sepsmcfjxvy3" path="res://scripts/score.gd" id="1_bak1h"]
+[ext_resource type="FontFile" uid="uid://6yxqmta4rfo" path="res://images/Dialogues/PixelifySans-VariableFont_wght.ttf" id="2_plgac"]
+
+[node name="Score" type="Control" unique_id=1314207172]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bak1h")
+
+[node name="Puntuacion" type="Label" parent="." unique_id=734421310]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 48
+text = "PUNTUACION : "

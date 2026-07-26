@@ -66,6 +66,7 @@ func show_line():
 		await get_tree().create_timer(line.get("time",2.0)).timeout
 		if (active):
 			next_line()
+			%Dialog_sound.play()
 
 	
 func _unhandled_input(event):
@@ -77,6 +78,7 @@ func _unhandled_input(event):
 	
 	if event.is_action_released("Dialogue"):
 		next_line()
+		%Dialog_sound.play()
 	if event.is_action_released("Skip_Dialogue"):
 		end_dialogue()
 
