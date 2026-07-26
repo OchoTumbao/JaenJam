@@ -11,6 +11,8 @@ var dialogue = []
 var current_line = 0
 var active = false
 
+var dialogue_id := 0
+
 signal dialogue_finished
 
 var mode : Global.Dialogue_mode
@@ -32,6 +34,7 @@ func _ready():
 
 
 func start_dialogue(lines, interaction_mode):
+	dialogue_id += 1
 	dialogue = lines
 	current_line = 0
 	active = true
@@ -41,6 +44,8 @@ func start_dialogue(lines, interaction_mode):
 
 
 func show_line():
+	var my_dialogue_id = dialogue_id
+	
 	var line = dialogue[current_line]
 
 	top_text.text = ""
@@ -64,6 +69,10 @@ func show_line():
 	
 	if mode == Global.Dialogue_mode.AUTO:
 		await get_tree().create_timer(line.get("time",2.0)).timeout
+		
+		if my_dialogue_id != dialogue_id:
+			return
+	
 		if (active):
 			next_line()
 			%Dialog_sound.play()

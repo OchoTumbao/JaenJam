@@ -5,6 +5,8 @@ var taxi_spawned = false
 var cart_spawned = false
 var ending_ready = false
 
+var entitysKilled = 0
+
 func _ready() -> void:
 	Global.scoreController = %Score
 	Global.spawn_bee(self, 2000, 600, 1)
@@ -35,11 +37,9 @@ func _on_cart_wall_body_entered(body: Node2D) -> void:
 		var cartDialogue = Global.loadDialogueJson("res://dialogues/Fase1Cart.json")
 		%DialogueManager.start_dialogue(cartDialogue, Global.Dialogue_mode.AUTO)
 		cart_spawned = true
-		trigger_phase1_Ending()
 		
 func trigger_phase1_Ending() -> void:
-	# Espera 10 segundos mientras el juego continúa normalmente.
-	await get_tree().create_timer(10.0).timeout
+	
 	ending_ready = true
 	var ending_dialogue = Global.loadDialogueJson("res://dialogues/Fase1Final.json")
 	%DialogueManager.start_dialogue(ending_dialogue, Global.Dialogue_mode.AUTO)
@@ -53,3 +53,7 @@ func register_entity(entity):
 
 func _on_entity_destroyed():
 	%Blip.play()
+	entitysKilled += 1
+	print(entitysKilled)
+	if(entitysKilled == 4):
+		trigger_phase1_Ending()
