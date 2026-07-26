@@ -1,0 +1,18 @@
+[
+	{
+		"top": "Tu primera prueba sera... UNA ABEJITA!!!",
+		"time" : 3.0
+	},
+	{
+		"top": "Las abejas son criaturas muy nobles, son practicamente inofensivas, acercate y observala",
+		"time" : 3.0
+	},
+	{
+		"bottom": "Paparruchas, te va a picar, te va a matar a ti y luego ira a por tu familia",
+		"time" : 3.0
+	},
+	{
+		"bottom": "Mejor adelantate, se inteligente, MATALA!!!",
+		"time" : 3.0
+	}
+]

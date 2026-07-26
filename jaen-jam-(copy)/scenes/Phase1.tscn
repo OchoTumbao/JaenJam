@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_0dg7t"]
 [ext_resource type="Script" uid="uid://c35bk5x8o8ggt" path="res://scripts/phase_1.gd" id="1_4fcp5"]
 [ext_resource type="PackedScene" uid="uid://dm5b3usgkp53r" path="res://scenes/score.tscn" id="2_57w61"]
-[ext_resource type="Texture2D" uid="uid://faesyplbjm1w" path="res://images/backgrounds/Fondo_final.png" id="4_khfs5"]
+[ext_resource type="Texture2D" uid="uid://cd3ygtdopi8pn" path="res://images/backgrounds/sky.PNG" id="4_5ssih"]
+[ext_resource type="Texture2D" uid="uid://dl6gq0cr16gb6" path="res://images/backgrounds/buildings.png" id="4_khfs5"]
+[ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="5_424rd"]
+[ext_resource type="Texture2D" uid="uid://di3fv2mbmi5uy" path="res://images/backgrounds/market.png" id="5_khfs5"]
 [ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="7_424rd"]
 [ext_resource type="Script" uid="uid://c8bvilobvuoy6" path="res://scripts/camera.gd" id="8_57w61"]
 
@@ -53,9 +56,31 @@ offset_bottom = 2.0
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1838899710]
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=408331291]
-position = Vector2(3350, 543)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1359011155]
+position = Vector2(3000.25, 538.5)
+scale = Vector2(0.99991673, 1.0046296)
+texture = ExtResource("4_5ssih")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=830626188]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=406767888]
+position = Vector2(3002.75, 540)
+scale = Vector2(0.9990838, 1)
 texture = ExtResource("4_khfs5")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1938430974]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=2009754881]
+position = Vector2(3002.75, 538)
+scale = Vector2(0.9990838, 1.0092592)
+texture = ExtResource("5_424rd")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=675339015]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1767585011]
+position = Vector2(3002.75, 538.5)
+scale = Vector2(0.9990838, 1.0046296)
+texture = ExtResource("5_khfs5")
 
 [node name="Player" parent="." unique_id=1434158289 instance=ExtResource("1_0dg7t")]
 unique_name_in_owner = true
@@ -80,7 +105,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat wall" unique_id=1245652823]
-position = Vector2(2853, 406)
+position = Vector2(2197, 406)
 shape = SubResource("SegmentShape2D_5mgoa")
 
 [node name="Taxi wall" type="Area2D" parent="." unique_id=1740383494]
@@ -88,7 +113,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Taxi wall" unique_id=1897422467]
-position = Vector2(3975, 411)
+position = Vector2(3448, 404)
 shape = SubResource("SegmentShape2D_5mgoa")
 
 [node name="Cart wall" type="Area2D" parent="." unique_id=76873809]
@@ -96,7 +121,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cart wall" unique_id=1150101212]
-position = Vector2(5171, 405)
+position = Vector2(4747, 420)
 shape = SubResource("SegmentShape2D_5mgoa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=600322074 node_paths=PackedStringArray("player", "left_area")]
