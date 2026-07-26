@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ti57b7etl62j" path="res://characters/player/player.tscn" id="1_0dg7t"]
 [ext_resource type="Script" uid="uid://c35bk5x8o8ggt" path="res://scripts/phase_1.gd" id="1_4fcp5"]
 [ext_resource type="PackedScene" uid="uid://dm5b3usgkp53r" path="res://scenes/score.tscn" id="2_57w61"]
-[ext_resource type="PackedScene" uid="uid://c3bj8krrtcj20" path="res://scenes/dialogue_manager.tscn" id="2_424rd"]
 [ext_resource type="Texture2D" uid="uid://cd3ygtdopi8pn" path="res://images/backgrounds/sky.PNG" id="4_5ssih"]
 [ext_resource type="Texture2D" uid="uid://dl6gq0cr16gb6" path="res://images/backgrounds/buildings.png" id="4_khfs5"]
 [ext_resource type="Texture2D" uid="uid://b8imq1tdftt6i" path="res://images/backgrounds/floor.png" id="5_424rd"]
@@ -21,6 +20,9 @@ b = Vector2(1, 214)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5mgoa"]
 a = Vector2(-196, 455)
 b = Vector2(-193, -404)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ojqj"]
+size = Vector2(20, 1080)
 
 [node name="Phase1" type="Node2D" unique_id=1645063333]
 script = ExtResource("1_4fcp5")
@@ -45,12 +47,13 @@ offset_right = 1920.0
 offset_bottom = 864.0
 
 [node name="Score" parent="CanvasLayer" unique_id=1314207172 instance=ExtResource("2_57w61")]
+unique_name_in_owner = true
 offset_left = 6.0
 offset_top = 900.0
 offset_right = 6.0
 offset_bottom = 900.0
 
-[node name="DialogueManager" parent="CanvasLayer" unique_id=409699684 instance=ExtResource("2_424rd")]
+[node name="DialogueManager" parent="CanvasLayer" unique_id=409699684 instance=ExtResource("7_424rd")]
 offset_left = 6.0
 offset_top = 2.0
 offset_right = 6.0
@@ -126,11 +129,22 @@ collision_mask = 2
 position = Vector2(4747, 420)
 shape = SubResource("SegmentShape2D_5mgoa")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=600322074 node_paths=PackedStringArray("player")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=600322074 node_paths=PackedStringArray("player", "left_area")]
 limit_left = 0
 limit_right = 6000
 script = ExtResource("8_57w61")
 player = NodePath("../Player")
+left_area = NodePath("Marker2D/IgnoreArea")
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D" unique_id=213187182]
+position = Vector2(9, -207)
+
+[node name="IgnoreArea" type="Area2D" parent="Camera2D/Marker2D" unique_id=542324004]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Marker2D/IgnoreArea" unique_id=1380359392]
+position = Vector2(-1, 539)
+shape = SubResource("RectangleShape2D_7ojqj")
 
 [node name="RightLimit" type="StaticBody2D" parent="." unique_id=773765436]
 position = Vector2(6000, 0)
@@ -141,3 +155,4 @@ shape = SubResource("SegmentShape2D_4fcp5")
 [connection signal="body_entered" from="Cat wall" to="." method="_on_cat_wall_body_entered"]
 [connection signal="body_entered" from="Taxi wall" to="." method="_on_taxi_wall_body_entered"]
 [connection signal="body_entered" from="Cart wall" to="." method="_on_cart_wall_body_entered"]
+[connection signal="area_entered" from="Camera2D/Marker2D/IgnoreArea" to="Camera2D" method="_on_ignore_area_area_entered"]

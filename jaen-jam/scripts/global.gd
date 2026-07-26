@@ -1,6 +1,7 @@
 extends Node
 
 var gameController : GameController
+var scoreController : ScoreController
 var score = 0
 
 enum Dialogue_mode {
@@ -33,6 +34,7 @@ func loadDialogueJson(path: String) -> Array:
 
 func modifyScore(value: int):
 	score += value
+	scoreController.set_score(score)
 
 func set_scores(entity: Node2D, angel_score: int, devil_score: int, ignore_score: int, player_hit_score: int):
 	entity.set_angel_score(angel_score)
