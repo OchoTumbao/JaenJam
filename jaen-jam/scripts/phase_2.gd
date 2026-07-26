@@ -120,10 +120,9 @@ func level1() -> void:
 	level += 1
 
 func finish_game() -> void:
-# TODO: Finish GoodEnding BadEnding and NeutralEnding scenes and uncomment this, delete pass
-#		Global.gameController.changeScene("res://scenes/GoodEnding.tscn")
-#	elif Global.score <0:
-#		Global.gameController.changeScene("res://scenes/BadEnding.tscn")
-#	else:
-#		Global.gameController.changeScene("res://scenes/NeutralEnding.tscn")
-	pass
+	if Global.score > 0:
+		Global.gameController.changeScene("res://scenes/GoodEnding.tscn")
+	elif Global.score < 0:
+		Global.gameController.changeScene("res://scenes/BadEnding.tscn")
+	else:
+		Global.gameController.changeScene("res://scenes/NeutralEnding.tscn")

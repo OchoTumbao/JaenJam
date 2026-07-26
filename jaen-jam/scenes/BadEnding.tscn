@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://m64aemlw2cxu"]
 
+[ext_resource type="Texture2D" uid="uid://b8y45pjkmh5ke" path="res://images/endings/Final_infierno.png" id="1_7vefu"]
+
 [node name="BadEnding" type="Node2D" unique_id=43643759]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=807575277]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1654703929]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7vefu")

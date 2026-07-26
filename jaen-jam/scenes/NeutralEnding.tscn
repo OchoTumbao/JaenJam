@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b0yya3kaia2qv"]
+
+[ext_resource type="Texture2D" uid="uid://omi47yrxn0q3" path="res://images/endings/Final_0.png" id="1_cupdd"]
+
+[node name="NeutralEnding" type="Node2D" unique_id=186174042]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=856141223]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1530993737]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_cupdd")
