@@ -40,12 +40,6 @@ offset_right = 2118.0
 offset_bottom = 216.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="CanvasLayer" unique_id=277241884]
-visible = false
-offset_top = 216.0
-offset_right = 1920.0
-offset_bottom = 864.0
-
 [node name="Score" parent="CanvasLayer" unique_id=1314207172 instance=ExtResource("2_57w61")]
 unique_name_in_owner = true
 offset_left = 6.0
