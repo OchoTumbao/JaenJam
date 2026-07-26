@@ -2,10 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cwh5fqj3eygfu" path="res://GameController.gd" id="1_i7pi0"]
 [ext_resource type="PackedScene" uid="uid://w3bkdbmhcl5y" path="res://scenes/Opening.tscn" id="2_qiihh"]
-[ext_resource type="PackedScene" uid="uid://dnktmnwyfqin5" path="res://scenes/Phase1.tscn" id="3_33u0x"]
-[ext_resource type="PackedScene" uid="uid://ci0ypchye36vc" path="res://scenes/Phase2.tscn" id="4_detsn"]
-[ext_resource type="PackedScene" uid="uid://c3prcxfidqg1" path="res://scenes/GoodEnding.tscn" id="5_s3nnd"]
-[ext_resource type="PackedScene" uid="uid://m64aemlw2cxu" path="res://scenes/BadEnding.tscn" id="6_8iwuh"]
 
 [node name="GameController" type="Node" unique_id=358187038]
 script = ExtResource("1_i7pi0")
@@ -14,11 +10,3 @@ script = ExtResource("1_i7pi0")
 
 [node name="Opening" parent="Game" unique_id=1333896469 instance=ExtResource("2_qiihh")]
 unique_name_in_owner = true
-
-[node name="Phase1" parent="Game" unique_id=1645063333 instance=ExtResource("3_33u0x")]
-
-[node name="Phase2" parent="Game" unique_id=829915753 instance=ExtResource("4_detsn")]
-
-[node name="GoodEnding" parent="Game" unique_id=1258317582 instance=ExtResource("5_s3nnd")]
-
-[node name="BadEnding" parent="Game" unique_id=43643759 instance=ExtResource("6_8iwuh")]

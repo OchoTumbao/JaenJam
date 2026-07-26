@@ -11,7 +11,25 @@ var dialogue = []
 var current_line = 0
 var active = false
 
+signal dialogue_finished
+
 var mode : Global.Dialogue_mode
+
+var portrait_state := {}
+
+func _ready():
+	portrait_state[%TopPortrait] = {
+		"position": %TopPortrait.position,
+		"scale": %TopPortrait.scale,
+		"rotation": %TopPortrait.rotation_degrees
+	}
+
+	portrait_state[%BottomPortrait] = {
+		"position": %BottomPortrait.position,
+		"scale": %BottomPortrait.scale,
+		"rotation": %BottomPortrait.rotation_degrees
+	}
+
 
 func start_dialogue(lines, interaction_mode):
 	dialogue = lines
@@ -31,10 +49,18 @@ func show_line():
 	top_text.text = line.get("top", "")
 	bottom_text.text = line.get("bottom", "")
 	
+	
 	if top_text.text != "":
+		%TopDialogue.visible = true
 		portrait_jump(%TopPortrait)
+	else:
+		%TopDialogue.visible = false
+		
 	if bottom_text.text != "":
+		%BottomDialogue.visible = true
 		portrait_jump(%BottomPortrait)
+	else:
+		%BottomDialogue.visible = false
 	
 	if mode == Global.Dialogue_mode.AUTO:
 		await get_tree().create_timer(line.get("time",2.0)).timeout
@@ -49,8 +75,10 @@ func _unhandled_input(event):
 	if mode != Global.Dialogue_mode.MANUAL:
 		return
 	
-	if event.is_action_pressed("Dialogue"):
+	if event.is_action_released("Dialogue"):
 		next_line()
+	if event.is_action_released("Skip_Dialogue"):
+		end_dialogue()
 
 
 func next_line():
@@ -69,16 +97,22 @@ func end_dialogue():
 	bottom_text.text = ""
 	
 	dialogue.clear()
+	
+	dialogue_finished.emit()
 
 func portrait_jump(portrait: TextureRect):
+	var state = portrait_state[portrait]
 
-	var start_pos = portrait.position
-	var start_scale = portrait.scale
-	var start_rotation = portrait.rotation_degrees
+	portrait.position = state.position
+	portrait.scale = state.scale
+	portrait.rotation_degrees = state.rotation
+
+	var start_pos = state.position
+	var start_scale = state.scale
+	var start_rotation = state.rotation
 
 	var tween = create_tween()
 
-	# Subida y énfasis inicial
 	tween.set_parallel(true)
 
 	tween.tween_property(
@@ -103,12 +137,10 @@ func portrait_jump(portrait: TextureRect):
 	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
-	# Mantener la pose un rato
 	tween.set_parallel(false)
 	tween.tween_interval(0.5)
 
 
-	# Volver lentamente
 	tween.set_parallel(true)
 
 	tween.tween_property(
